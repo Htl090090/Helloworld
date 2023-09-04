@@ -7,6 +7,9 @@ import time
 import datetime
 import seaborn as sns
 import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
+
+font = FontProperties(fname=r"", size=12)
 
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
