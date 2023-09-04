@@ -198,4 +198,4 @@ plt.grid()
 #if submitted1:
 st.write("用户输入的特征数据：{}".format([d1,d2,d3]))
 #st.line_chart(dff)  
-st.pyplot(fig_1)
+st.pyplot(fig)
