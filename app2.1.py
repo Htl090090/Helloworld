@@ -9,7 +9,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 
-font = FontProperties(fname=r"", size=12)
+# 设置字体
+font_path = 'SimHei.ttf'  # 替换为你的中文字体文件路径
+font_prop = FontProperties(fname=font_path, size=12)
 
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
@@ -185,15 +187,12 @@ plt.rcParams['font.sans-serif'] = ['SimHei']
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
 
 # 添加标题和坐标轴标签
-plt.title('关键影响因素',  fontsize=16)
-plt.xlabel('影响因素',  fontsize=12)
-plt.ylabel('产气含量预测',  fontsize=12)
+plt.title('关键影响因素', fontproperties=font_prop, fontsize=16)
+plt.xlabel('影响因素', fontproperties=font_prop, fontsize=12)
+plt.ylabel('产气含量预测', fontproperties=font_prop, fontsize=12)
 
 # 修改坐标轴刻度
-plt.xticks( fontsize=10, rotation=45)
-
-# 添加网格线
-plt.grid()
+plt.xticks(fontproperties=font_prop, fontsize=10, rotation=45)
 
 #df_predict11=pd.DataFrame{([d1,d2,d3],new_prediction1),}
 #submitted1 = st.form_submit_button('提交: 进行规律预测')
