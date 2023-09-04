@@ -5,6 +5,9 @@ from pandas import DataFrame
 import pickle
 import time
 import datetime
+import seaborn as sns
+import matplotlib.pyplot as plt
+
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
 st.set_page_config(page_title="生物质蒸汽气化气体产物预测",layout="wide",initial_sidebar_state="auto")
