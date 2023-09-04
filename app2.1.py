@@ -7,6 +7,11 @@ import time
 import datetime
 import seaborn as sns
 import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
+
+# 设置字体
+font_path = 'SimHei.ttf'  # 替换为你的中文字体文件路径
+font_prop = FontProperties(fname=font_path, size=12)
 
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
@@ -182,13 +187,13 @@ fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
 
 # 添加标题和坐标轴标签
-plt.title('关键影响因素', font='SimHei', fontsize=16)
-plt.xlabel('影响因素', font='SimHei', fontsize=12)
-plt.ylabel('产气含量预测', font='SimHei', fontsize=12)
+plt.title('关键影响因素', fontproperties=font_prop, fontsize=16)
+plt.xlabel('影响因素', fontproperties=font_prop, fontsize=12)
+plt.ylabel('产气含量预测', fontproperties=font_prop, fontsize=12)
 
 # 修改坐标轴刻度
-plt.xticks(font='Times New Roman', fontsize=10, rotation=45)
-plt.yticks(font='Times New Roman', fontsize=10)
+plt.xticks(fontproperties=font_prop, fontsize=10, rotation=45)
+plt.yticks(fontproperties=font_prop, fontsize=10)
 
 # 添加网格线
 plt.grid()
