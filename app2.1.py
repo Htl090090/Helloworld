@@ -174,11 +174,10 @@ sns.set_theme(style="white",
                 font='Times New Roman',
                 font_scale=1)  
 fig_1,ax_1 = plt.subplots(figsize=(8, 4), dpi= 80)
-df.set_index('Name', inplace=True)
 ax_1 = sns.lineplot(data=df,x=df.index,y='Name')
 plt.title('关键影响因素',font='SimHei')
 plt.ylabel('产气含量预测',font='SimHei')
-
+plt.xlabel('影响因素',font='SimHei')
 
 #df_predict11=pd.DataFrame{([d1,d2,d3],new_prediction1),}
 #submitted1 = st.form_submit_button('提交: 进行规律预测')
