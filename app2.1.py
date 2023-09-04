@@ -182,7 +182,9 @@ plt.rcParams['font.sans-serif']=['SimHei']   # 用黑体显示中文
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 绘制折线图
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
-
+# 添加数据标签
+for x, y in zip(df.index, df['Name']):
+    plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=10)
 # 添加标题和坐标轴标签
 plt.title('关键影响因素', font='SimHei', fontsize=16)
 plt.xlabel('影响因素', font='SimHei', fontsize=12)
