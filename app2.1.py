@@ -8,8 +8,7 @@ import datetime
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# 设置字体
-matplotlib.rcParams['font.sans-serif']=['SimHei']   # 用黑体显示中文
+
 
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
@@ -177,7 +176,8 @@ df = pd.DataFrame(dataprediction, index=index)
 
 # 设置Seaborn样式
 sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=1.2)
-
+# 设置字体
+plt.rcParams['font.sans-serif']=['SimHei']   # 用黑体显示中文
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 绘制折线图
