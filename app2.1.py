@@ -182,7 +182,6 @@ sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=1.2)
 
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
-plt.rcParams['font.sans-serif'] = ['SimHei']
 # 绘制折线图
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
 
