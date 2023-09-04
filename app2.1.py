@@ -169,7 +169,7 @@ df_predict1=pd.DataFrame(data_predict1,columns= ['A', 'FC', 'V', 'C', 'H', 'O', 
 
 new_prediction1 = model.predict(df_predict1)
 dataprediction = {'Name':new_prediction1}
-index = ['d1', 'd2', 'd3']
+index = [d1, d2, d3]
 df = pd.DataFrame(dataprediction, index=index)
 
 # 设置Seaborn样式
