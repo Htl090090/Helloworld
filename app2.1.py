@@ -190,8 +190,11 @@ plt.title('关键影响因素', fontproperties=font_prop, fontsize=16)
 plt.xlabel('影响因素', fontproperties=font_prop, fontsize=12)
 plt.ylabel('产气含量预测', fontproperties=font_prop, fontsize=12)
 
+# 调整图形的边距
+fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
+
 # 修改坐标轴刻度
-plt.xticks(fontproperties=font_prop, fontsize=10, rotation=45)
+plt.yticks(fontproperties=font, fontsize=10, rotation=45)
 
 #df_predict11=pd.DataFrame{([d1,d2,d3],new_prediction1),}
 #submitted1 = st.form_submit_button('提交: 进行规律预测')
