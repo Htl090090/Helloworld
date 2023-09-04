@@ -169,15 +169,22 @@ df_predict1=pd.DataFrame(data_predict1,columns= ['A', 'FC', 'V', 'C', 'H', 'O', 
 
 new_prediction1 = model.predict(df_predict1)
 dataprediction = {'Name':new_prediction1}
-df = pd.DataFrame(dataprediction , index=[d1,d2,d3]) 
-sns.set_theme(style="white",
-                font='Times New Roman',
-                font_scale=1)  
-fig_1,ax_1 = plt.subplots(figsize=(8, 4), dpi= 80)
-ax_1 = sns.lineplot(data=df,x=df.index,y='Name')
-plt.title('关键影响因素',font='SimHei')
-plt.ylabel('产气含量预测',font='SimHei')
-plt.xlabel('影响因素',font='SimHei')
+index = ['d1', 'd2', 'd3']
+df = pd.DataFrame(dataprediction, index=index)
+
+# 设置Seaborn样式
+sns.set_theme(style="white", font='SimHei', font_scale=1)
+
+# 创建图形和坐标轴
+fig_1, ax_1 = plt.subplots(figsize=(8, 4), dpi=80)
+
+# 绘制折线图
+ax_1 = sns.lineplot(data=df, x=df.index, y='Name')
+
+# 添加标题和坐标轴标签
+plt.title('关键影响因素')
+plt.ylabel('产气含量预测')
+plt.xlabel('影响因素')
 
 #df_predict11=pd.DataFrame{([d1,d2,d3],new_prediction1),}
 #submitted1 = st.form_submit_button('提交: 进行规律预测')
