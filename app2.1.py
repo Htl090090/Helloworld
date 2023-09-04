@@ -173,18 +173,25 @@ index = [d1, d2, d3]
 df = pd.DataFrame(dataprediction, index=index)
 
 # 设置Seaborn样式
-sns.set_theme(style="white", font='SimHei', font_scale=1)
+sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=1.2)
 
 # 创建图形和坐标轴
-fig_1, ax_1 = plt.subplots(figsize=(8, 4), dpi=80)
+fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 
 # 绘制折线图
-ax_1 = sns.lineplot(data=df, x=df.index, y='Name')
+sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
 
 # 添加标题和坐标轴标签
-plt.title('关键影响因素')
-plt.ylabel('产气含量预测')
-plt.xlabel('影响因素')
+plt.title('关键影响因素', font='SimHei', fontsize=16)
+plt.xlabel('影响因素', font='SimHei', fontsize=12)
+plt.ylabel('产气含量预测', font='SimHei', fontsize=12)
+
+# 修改坐标轴刻度
+plt.xticks(font='Times New Roman', fontsize=10, rotation=45)
+plt.yticks(font='Times New Roman', fontsize=10)
+
+# 添加网格线
+plt.grid()
 
 #df_predict11=pd.DataFrame{([d1,d2,d3],new_prediction1),}
 #submitted1 = st.form_submit_button('提交: 进行规律预测')
