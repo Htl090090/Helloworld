@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 from matplotlib.font_manager import FontProperties
 font1 = FontProperties(fname=r'simhei.ttf')
-
+font2 = FontProperties(fname=r'simhei.ttf')
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
 st.set_page_config(page_title="生物质蒸汽气化气体产物预测",layout="wide",initial_sidebar_state="auto")
@@ -176,7 +176,7 @@ index = [d1, d2, d3]
 df = pd.DataFrame(dataprediction, index=index)
 
 # 设置Seaborn样式
-sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=2.5, rc={'lines.linewidth': 2.5})
+sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=2.5)
 # 设置字体
 #plt.rcParams['font.sans-serif'] = ['simhei.ttf']
 # 创建图形和坐标轴
@@ -203,7 +203,7 @@ plt.ylim(0)
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
 # 添加图例
-plt.legend(prop=font1, fontsize=8)
+ax.legend(frameon=False,loc='lower right', prop = {'size':12})
 
 # 修改坐标轴刻度
 #plt.yticks(fontproperties=font, fontsize=10, rotation=45)
