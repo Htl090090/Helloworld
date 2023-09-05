@@ -10,14 +10,6 @@ import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 from matplotlib.pyplot import MultipleLocator
 import matplotlib.font_manager as fm
-# 设置字体文件路径
-font_path = 'Times New Roman.ttf'
-
-# 注册字体
-fm.fontManager.addfont(font_path)
-
-# 设置默认字体
-plt.rcParams['font.family'] = fm.FontProperties(fname=font_path).get_name()
 
 font1 = FontProperties(fname=r'simhei.ttf')
 
@@ -211,26 +203,17 @@ new_prediction1 = model.predict(df_predict1)
 dataprediction = {'Name':new_prediction1}
 index = [d1, d2, d3, d4, d5]
 df = pd.DataFrame(dataprediction, index=index)
-# 设置字体
-#plt.rcParams['font.sans-serif'] = ['Times New Roman.ttf']
+
+# 定义要使用的字体
+custom_font = fm.FontProperties(fname='Times New Roman.ttf')
 
 # 设置Seaborn样式
-sns.set_theme(style="whitegrid", font_scale=2.5)
+sns.set_theme(style="whitegrid", font=custom_font.get_name(),font_scale=2.5)
 sns.set_context("poster")
-
+plt.rcParams['font.family'] = custom_font.get_name()
 
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
-
-# 设置数字字体为新罗马
-ax.set_xticklabels(ax.get_xticks())
-ax.set_yticklabels(ax.get_yticks())
-
-# 设置刻度线的字体为新罗马
-for tick in ax.get_xticklabels():
-    tick.set_fontname('Times New Roman')
-for tick in ax.get_yticklabels():
-    tick.set_fontname('Times New Roman')
 
 # 绘制折线图
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
