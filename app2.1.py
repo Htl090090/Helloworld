@@ -191,8 +191,8 @@ for x, y in zip(df.index, df['Name']):
     plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=12)
 # 添加标题和坐标轴标签
 plt.title('关键影响因素与产气氢气含量的关系图', fontproperties=font1, fontsize=16)
-plt.xlabel('影响因素', fontproperties=font1, fontsize=12)
-plt.ylabel('产气含量预测', fontproperties=font1, fontsize=12)
+plt.xlabel('影响因素',  fontsize=12)
+plt.ylabel('产气含量预测',  fontsize=12)
 # 设置网格线样式为虚线，并添加刻度
 ax.grid(linestyle='dashed')
 plt.xticks(df.index, rotation=45)
