@@ -183,7 +183,7 @@ plt.rcParams['font.sans-serif'] = ['simhei.ttf']
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 绘制折线图
-line = sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
+sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
 
 #y轴间距
 y_major_locator=MultipleLocator(10)
@@ -212,7 +212,7 @@ fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
 plt.ylim(0, max(df['Name']) * 1.2)
 
 # 添加图例
-plt.legend([line], ['产气含量'],loc='lower right',prop={'size':10})
+#plt.legend(loc='lower right',prop={'size':10})
 
 # 设置网格线样式为虚线，并添加刻度
 ax.grid(linestyle='dashed')
