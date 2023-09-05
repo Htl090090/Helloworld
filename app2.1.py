@@ -193,8 +193,10 @@ for x, y in zip(df.index, df['Name']):
 plt.title('关键影响因素与产气氢气含量的关系图', fontproperties=font1, fontsize=16)
 plt.xlabel('影响因素', fontproperties=font1, fontsize=12)
 plt.ylabel('产气含量预测', fontproperties=font1, fontsize=12)
-
-
+# 设置网格线样式为虚线，并添加刻度
+ax.grid(linestyle='dashed')
+plt.xticks(df.index, rotation=45)
+plt.yticks(fontsize=12)
 
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
