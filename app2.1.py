@@ -175,7 +175,7 @@ index = [d1, d2, d3]
 df = pd.DataFrame(dataprediction, index=index)
 
 # 设置Seaborn样式
-sns.set_theme(style="whitegrid", font=font1, font_scale=2.5)
+sns.set_theme(style="whitegrid", font_scale=2.5)
 sns.set_context("poster")
 
 # 设置字体
