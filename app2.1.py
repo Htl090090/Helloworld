@@ -191,7 +191,7 @@ sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b',
 
 # 添加数据标签
 for x, y in zip(df.index, df['Name']):
-    plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=12)
+    plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontproperties=font1, fontsize=12)
 # 添加标题和坐标轴标签
 plt.title('关键影响因素与产气氢气含量的关系图',  fontproperties=font1)
 plt.xlabel('影响因素',   fontproperties=font1)
