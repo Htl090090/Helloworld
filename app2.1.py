@@ -175,7 +175,7 @@ df = pd.DataFrame(dataprediction, index=index)
 # 设置Seaborn样式
 sns.set_theme(style="whitegrid", 
               font='Times New Roman', 
-              rc={'font.size': 18,
+              rc={'font.size': 12,
                       'axes.labelsize': 16,
                       'axes.titlesize': 16,
                       'xtick.labelsize': 12,
