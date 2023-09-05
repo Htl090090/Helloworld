@@ -191,7 +191,7 @@ ax.yaxis.set_major_locator(y_major_locator)
 
 # 添加数据标签
 for x, y in zip(df.index, df['Name']):
-    plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=14)
+    plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=14, fontproperties='Times New Roman')
 
 # 设置刻度线的可见性
 ax.xaxis.set_visible(True)
@@ -205,6 +205,10 @@ plt.ylabel('产气含量预测', fontproperties=font1, fontsize=14)
 # 设置坐标轴标签字体大小和粗细
 ax.tick_params(axis='x', labelsize=12)
 ax.tick_params(axis='y', labelsize=12)
+
+# 设置刻度标签字体
+ax.set_xticklabels(ax.get_xticks(), fontproperties='Times New Roman')
+ax.set_yticklabels(ax.get_yticks(), fontproperties='Times New Roman')
 
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
