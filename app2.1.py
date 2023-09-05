@@ -223,8 +223,14 @@ sns.set_context("poster")
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 
 # 设置数字字体为新罗马
-ax.set_xticklabels(ax.get_xticks(), fontname='Times New Roman')
-ax.set_yticklabels(ax.get_yticks(), fontname='Times New Roman')
+ax.set_xticklabels(ax.get_xticks())
+ax.set_yticklabels(ax.get_yticks())
+
+# 设置刻度线的字体为新罗马
+for tick in ax.get_xticklabels():
+    tick.set_fontname('Times New Roman')
+for tick in ax.get_yticklabels():
+    tick.set_fontname('Times New Roman')
 
 # 绘制折线图
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
