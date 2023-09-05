@@ -9,6 +9,15 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 from matplotlib.pyplot import MultipleLocator
+import matplotlib.font_manager as fm
+# 设置字体文件路径
+font_path = 'Times New Roman.ttf'
+
+# 注册字体
+fm.fontManager.addfont(font_path)
+
+# 设置默认字体
+plt.rcParams['font.family'] = fm.FontProperties(fname=font_path).get_name()
 
 font1 = FontProperties(fname=r'simhei.ttf')
 
@@ -203,7 +212,7 @@ dataprediction = {'Name':new_prediction1}
 index = [d1, d2, d3, d4, d5]
 df = pd.DataFrame(dataprediction, index=index)
 # 设置字体
-plt.rcParams['font.sans-serif'] = ['Times New Roman.ttf']
+#plt.rcParams['font.sans-serif'] = ['Times New Roman.ttf']
 
 # 设置Seaborn样式
 sns.set_theme(style="whitegrid", font_scale=2.5)
