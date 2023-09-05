@@ -186,6 +186,9 @@ fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 绘制折线图
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
 
+# 设置Y轴刻度范围
+plt.ylim(0, max(df['Name']) * 1.2)
+
 #y轴间距
 y_major_locator=MultipleLocator(10)
 ax.yaxis.set_major_locator(y_major_locator)
@@ -214,8 +217,7 @@ ax.tick_params(axis='y', labelsize=12)
 
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
-# 设置Y轴刻度范围
-plt.ylim(0, max(df['Name']) * 1.2)
+
 
 # 添加图例
 #plt.legend(loc='lower right',prop={'size':10})
