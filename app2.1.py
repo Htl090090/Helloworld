@@ -187,7 +187,7 @@ fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b'，label='产气含量')
 #y轴间距
 y_major_locator=MultipleLocator(10)
-ax1.yaxis.set_major_locator(y_major_locator)
+ax.yaxis.set_major_locator(y_major_locator)
 
 # 添加数据标签
 for x, y in zip(df.index, df['Name']):
