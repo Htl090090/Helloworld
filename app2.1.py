@@ -202,7 +202,7 @@ plt.ylim(0)
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
 # 添加图例
-plt.legend(prop=font1, fontsize=8,loc='upper left')
+plt.legend(prop=font1, fontsize=8, bbox_to_anchor=(1.05, 1))
 
 # 修改坐标轴刻度
 #plt.yticks(fontproperties=font, fontsize=10, rotation=45)
