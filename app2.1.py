@@ -182,10 +182,10 @@ sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=2.5)
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 设置坐标轴标签字体大小和粗细
-ax.tick_params(axis='x', labelsize=12)
-ax.tick_params(axis='y', labelsize=12)
+ax.tick_params(axis='x', font='Times New Roman', labelsize=12)
+ax.tick_params(axis='y',  font='Times New Roman', labelsize=12)
 # 绘制折线图
-sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
+sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b', label='产气含量')
 # 添加数据标签
 for x, y in zip(df.index, df['Name']):
     plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=12)
@@ -197,9 +197,10 @@ plt.ylabel('产气含量预测', fontproperties=font1, fontsize=12)
 ax.grid(linestyle='dashed')
 plt.xticks(df.index, rotation=45)
 plt.yticks(fontsize=12)
-
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
+# 添加图例
+plt.legend(prop=font1, fontsize=12)
 
 # 修改坐标轴刻度
 #plt.yticks(fontproperties=font, fontsize=10, rotation=45)
