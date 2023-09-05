@@ -173,9 +173,9 @@ index = [d1, d2, d3]
 df = pd.DataFrame(dataprediction, index=index)
 
 # 设置Seaborn样式
-sns.set_theme(style="white", font='Times New Roman', font_scale=2.5)
+sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=2.5)
 # 设置字体
-#plt.rcParams['font.sans-serif'] = ['simhei.ttf']
+plt.rcParams['font.sans-serif'] = ['simhei.ttf']
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 绘制折线图
@@ -187,6 +187,9 @@ for x, y in zip(df.index, df['Name']):
 plt.title('关键影响因素与产气氢气含量的关系图', fontproperties=font1, fontsize=16)
 plt.xlabel('影响因素', fontproperties=font1, fontsize=12)
 plt.ylabel('产气含量预测', fontproperties=font1, fontsize=12)
+
+# 设置网格线样式为虚线，并添加刻度
+ax.grid(linestyle='dashed')
 
 # 设置坐标轴标签字体大小和粗细
 ax.tick_params(axis='x', labelsize=12)
