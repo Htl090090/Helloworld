@@ -210,10 +210,9 @@ ax.tick_params(axis='y', labelsize=12)
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
 # 设置Y轴刻度范围
 plt.ylim(0, max(df['Name']) * 1.2)
-# 调整图形的边距
-fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
+
 # 添加图例
-plt.legend(frameon=False,loc='lower right',prop={'size':12})
+plt.legend(loc='lower right',prop={'size':10})
 
 # 设置网格线样式为虚线，并添加刻度
 ax.grid(linestyle='dashed')
