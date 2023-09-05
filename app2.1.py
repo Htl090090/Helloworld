@@ -175,12 +175,12 @@ df = pd.DataFrame(dataprediction, index=index)
 # 设置Seaborn样式
 sns.set_theme(style="whitegrid", 
               font='Times New Roman', 
-              rc={'font.size': 12,
+              rc={'font.size': 18,
                       'axes.labelsize': 16,
                       'axes.titlesize': 16,
-                      'xtick.labelsize': 12,
-                      'ytick.labelsize': 12,
-                      'legend.fontsize': 12
+                      'xtick.labelsize': 18,
+                      'ytick.labelsize': 18,
+                      'legend.fontsize': 18
                  })
 sns.set_context("poster")
 #plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
