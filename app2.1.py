@@ -184,7 +184,7 @@ plt.rcParams['font.sans-serif'] = ['simhei.ttf']
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 绘制折线图
-sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b'，label='产气含量')
+sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b',label='产气含量')
 #y轴间距
 y_major_locator=MultipleLocator(10)
 ax.yaxis.set_major_locator(y_major_locator)
