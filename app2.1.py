@@ -186,6 +186,7 @@ ax.tick_params(axis='x', labelsize=12)
 ax.tick_params(axis='y', labelsize=12)
 # 绘制折线图
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b', label='产气含量')
+sns.set_context("poster")
 # 添加数据标签
 for x, y in zip(df.index, df['Name']):
     plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=12)
@@ -202,7 +203,7 @@ plt.ylim(0)
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
 # 添加图例
-plt.legend(prop=font1, fontsize=8, bbox_to_anchor=(1.05, 1))
+plt.legend(prop=font1, fontsize=8)
 
 # 修改坐标轴刻度
 #plt.yticks(fontproperties=font, fontsize=10, rotation=45)
