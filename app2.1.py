@@ -176,7 +176,7 @@ df = pd.DataFrame(dataprediction, index=index)
 
 # 设置Seaborn样式
 sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=2.5)
-sns.set_context("poster")
+#sns.set_context("poster")
 
 # 设置字体
 plt.rcParams['font.sans-serif'] = ['simhei.ttf']
@@ -213,7 +213,7 @@ plt.ylim(0, max(df['Name']) * 1.2)
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
 # 添加图例
-plt.legend(frameon=False,loc='upper right',prop={'size':12})
+plt.legend(frameon=False,loc='lower right',prop={'size':12})
 
 # 设置网格线样式为虚线，并添加刻度
 ax.grid(linestyle='dashed')
