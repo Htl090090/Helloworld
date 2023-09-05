@@ -8,9 +8,6 @@ import datetime
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-from matplotlib.font_manager import _rebuild
-_rebuild() #reload一下
-
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
 st.set_page_config(page_title="生物质蒸汽气化气体产物预测",layout="wide",initial_sidebar_state="auto")
@@ -20,8 +17,6 @@ d=st.sidebar.date_input('Date',st.session_state.date_time.date())
 t=st.sidebar.time_input('Time',st.session_state.date_time.time())
 t=f'{t}'.split('.')[0]
 st.sidebar.write(f'The current date time is {d} {t}')
-
-
 
 st.title("生物质蒸汽气化气体产物预测")
 st.header("")
@@ -176,14 +171,19 @@ index = [d1, d2, d3]
 df = pd.DataFrame(dataprediction, index=index)
 
 # 设置Seaborn样式
-sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=2)
+sns.set_theme(style="whitegrid", 
+              font='Times New Roman', 
+              rc={'font.size': 18,
+                      'axes.labelsize': 16,
+                      'axes.titlesize': 16,
+                      'xtick.labelsize': 12,
+                      'ytick.labelsize': 12,
+                      'legend.fontsize': 12
+                 })
 sns.set_context("poster")
 plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
-# 设置坐标轴标签字体大小和粗细
-ax.tick_params(axis='x', labelsize=12)
-ax.tick_params(axis='y', labelsize=12)
 # 绘制折线图
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b', label='产气含量')
 
@@ -191,19 +191,17 @@ sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b',
 for x, y in zip(df.index, df['Name']):
     plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=12)
 # 添加标题和坐标轴标签
-plt.title('关键影响因素与产气氢气含量的关系图', fontsize=16)
-plt.xlabel('影响因素',  fontsize=12)
-plt.ylabel('产气含量预测',  fontsize=12)
+plt.title('关键影响因素与产气氢气含量的关系图', font='SimHei')
+plt.xlabel('影响因素',  font='SimHei')
+plt.ylabel('产气含量预测',  font='SimHei')
 # 设置网格线样式为虚线，并添加刻度
 ax.grid(linestyle='dashed')
-plt.xticks(df.index, rotation=45)
-plt.yticks(fontsize=12)
 # 设置Y轴刻度范围
 plt.ylim(0)
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
 # 添加图例
-ax.legend(frameon=False,loc='lower right', prop = {'size':12})
+ax.legend(frameon=False,loc='lower right')
 
 # 修改坐标轴刻度
 #plt.yticks(fontproperties=font, fontsize=10, rotation=45)
