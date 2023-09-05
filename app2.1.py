@@ -8,7 +8,8 @@ import datetime
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-
+from matplotlib.font_manager import FontProperties
+font1 = FontProperties(fname=r'simhei.ttf')
 
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
@@ -177,6 +178,7 @@ df = pd.DataFrame(dataprediction, index=index)
 # 设置Seaborn样式
 sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=1.2)
 # 设置字体
+plt.rcParams['font.sans-serif'] = ['simhei.ttf']
 plt.rcParams['font.sans-serif']=['SimHei']   # 用黑体显示中文
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
@@ -186,9 +188,9 @@ sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
 for x, y in zip(df.index, df['Name']):
     plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=10)
 # 添加标题和坐标轴标签
-plt.title('关键影响因素', font='SimHei', fontsize=16)
-plt.xlabel('影响因素', font='SimHei', fontsize=12)
-plt.ylabel('产气含量预测', font='SimHei', fontsize=12)
+plt.title('关键影响因素', fontproperties=font1, fontsize=16)
+plt.xlabel('影响因素', fontproperties=font1, fontsize=12)
+plt.ylabel('产气含量预测', fontproperties=font1, fontsize=12)
 
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
