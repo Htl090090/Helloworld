@@ -7,6 +7,8 @@ import time
 import datetime
 import seaborn as sns
 import matplotlib.pyplot as plt
+from matplotlib.font_manager import FontProperties
+font1 = FontProperties(fname=r'simhei.ttf')
 
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
@@ -181,19 +183,19 @@ sns.set_theme(style="whitegrid",
                       'legend.fontsize': 12
                  })
 sns.set_context("poster")
-plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
+#plt.rcParams['font.sans-serif']=['SimHei'] #用来正常显示中文标签
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 绘制折线图
-sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b', label='产气含量')
+sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b', label='产气含量',linewidth=2)
 
 # 添加数据标签
 for x, y in zip(df.index, df['Name']):
     plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=12)
 # 添加标题和坐标轴标签
-plt.title('关键影响因素与产气氢气含量的关系图', font='SimHei')
-plt.xlabel('影响因素',  font='SimHei')
-plt.ylabel('产气含量预测',  font='SimHei')
+plt.title('关键影响因素与产气氢气含量的关系图',  fontproperties=font1)
+plt.xlabel('影响因素',   fontproperties=font1)
+plt.ylabel('产气含量预测',   fontproperties=font1)
 # 设置网格线样式为虚线，并添加刻度
 ax.grid(linestyle='dashed')
 # 设置Y轴刻度范围
