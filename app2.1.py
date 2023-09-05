@@ -10,7 +10,8 @@ import matplotlib.pyplot as plt
 
 from matplotlib.font_manager import FontProperties
 font1 = FontProperties(fname=r'simhei.ttf')
-font2 = FontProperties(fname=r'simhei.ttf')
+font2 = FontProperties(fname=r'Times New Roman.ttf')
+
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
 st.set_page_config(page_title="生物质蒸汽气化气体产物预测",layout="wide",initial_sidebar_state="auto")
@@ -176,7 +177,8 @@ index = [d1, d2, d3]
 df = pd.DataFrame(dataprediction, index=index)
 
 # 设置Seaborn样式
-sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=2.5)
+sns.set_theme(style="whitegrid", font=font2, font_scale=2)
+sns.set_context("poster")
 # 设置字体
 #plt.rcParams['font.sans-serif'] = ['simhei.ttf']
 # 创建图形和坐标轴
@@ -186,7 +188,7 @@ ax.tick_params(axis='x', labelsize=12)
 ax.tick_params(axis='y', labelsize=12)
 # 绘制折线图
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b', label='产气含量')
-sns.set_context("poster")
+
 # 添加数据标签
 for x, y in zip(df.index, df['Name']):
     plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=12)
