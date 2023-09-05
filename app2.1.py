@@ -174,7 +174,7 @@ dataprediction = {'Name':new_prediction1}
 index = [d1, d2, d3]
 df = pd.DataFrame(dataprediction, index=index)
 # 设置字体
-plt.rcParams['font.sans-serif'] = ['simhei.ttf']
+plt.rcParams['font.sans-serif'] = ['Times New Roman']
 
 # 设置Seaborn样式
 sns.set_theme(style="whitegrid",font='Times New Roman', font_scale=2.5)
@@ -195,20 +195,16 @@ ax.yaxis.set_major_locator(y_major_locator)
 
 # 添加数据标签
 for x, y in zip(df.index, df['Name']):
-    plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=14, fontproperties='Times New Roman')
+    plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=14)
 
 # 设置刻度线的可见性
 ax.xaxis.set_visible(True)
 ax.yaxis.set_visible(True) 
 
 # 添加标题和坐标轴标签
-plt.title('关键影响因素与产气氢气含量的关系图', fontproperties=font1, fontsize=18)
-plt.xlabel('影响因素', fontproperties=font1, fontsize=14)
-plt.ylabel('产气含量预测', fontproperties=font1, fontsize=14)
-
-# 设置刻度标签字体
-ax.set_xticklabels(ax.get_xticks(), fontproperties='Times New Roman')
-ax.set_yticklabels(ax.get_yticks(), fontproperties='Times New Roman')
+plt.title('关键影响因素与产气氢气含量的关系图', fontproperties=font1, fontsize=20)
+plt.xlabel('影响因素', fontproperties=font1, fontsize=16)
+plt.ylabel('产气含量预测', fontproperties=font1, fontsize=16)
 
 # 设置坐标轴标签字体大小和粗细
 ax.tick_params(axis='x', labelsize=12)
