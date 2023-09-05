@@ -178,7 +178,7 @@ df = pd.DataFrame(dataprediction, index=index)
 # 设置Seaborn样式
 sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=2.5, rc={'lines.linewidth': 2.5})
 # 设置字体
-plt.rcParams['font.sans-serif'] = ['simhei.ttf']
+#plt.rcParams['font.sans-serif'] = ['simhei.ttf']
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 设置坐标轴标签字体大小和粗细
