@@ -173,13 +173,14 @@ new_prediction1 = model.predict(df_predict1)
 dataprediction = {'Name':new_prediction1}
 index = [d1, d2, d3]
 df = pd.DataFrame(dataprediction, index=index)
+# 设置字体
+plt.rcParams['font.sans-serif'] = ['simhei.ttf']
 
 # 设置Seaborn样式
 sns.set_theme(style="whitegrid",font='Times New Roman', font_scale=2.5)
 sns.set_context("poster")
 
-# 设置字体
-plt.rcParams['font.sans-serif'] = ['simhei.ttf']
+
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 绘制折线图
@@ -207,8 +208,8 @@ ax.tick_params(axis='x', labelsize=12)
 ax.tick_params(axis='y', labelsize=12)
 
 # 设置刻度标签字体
-ax.set_xticklabels(ax.get_xticks(), fontproperties='Times New Roman')
-ax.set_yticklabels(ax.get_yticks(), fontproperties='Times New Roman')
+#ax.set_xticklabels(ax.get_xticks(), fontproperties='Times New Roman')
+#ax.set_yticklabels(ax.get_yticks(), fontproperties='Times New Roman')
 
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
