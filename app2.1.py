@@ -176,7 +176,7 @@ index = [d1, d2, d3]
 df = pd.DataFrame(dataprediction, index=index)
 
 # 设置Seaborn样式
-sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=2.5)
+sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=2.5, rc={'lines.linewidth': 2.5})
 # 设置字体
 plt.rcParams['font.sans-serif'] = ['simhei.ttf']
 # 创建图形和坐标轴
@@ -197,10 +197,12 @@ plt.ylabel('产气含量预测', fontproperties=font1, fontsize=12)
 ax.grid(linestyle='dashed')
 plt.xticks(df.index, rotation=45)
 plt.yticks(fontsize=12)
+# 设置Y轴刻度范围
+plt.ylim(0)
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
 # 添加图例
-plt.legend(prop=font1, fontsize=8)
+plt.legend(prop=font1, fontsize=8,loc='upper left')
 
 # 修改坐标轴刻度
 #plt.yticks(fontproperties=font, fontsize=10, rotation=45)
