@@ -88,9 +88,6 @@ with st.form('user_input'):
         # 模型预测
         new_prediction = model.predict(data_frame)
 
-        # 预测的企鹅类别
-        #predict_species = label_names[new_prediction][0]
-
         # 根据模型的特征重要性输出，绘制特征：bill length, bill depth, flipper length 的直方图
         st.subheader("预测的氢气组分含量是：:red[{}]  %".format(new_prediction))
 
@@ -106,72 +103,104 @@ aa=st.number_input(
 ab=st.number_input(
         label = "工况2",step=1.00,
         min_value =0.00,max_value=1000.00)
+ab=st.number_input(
+        label = "工况3",step=1.00,
+        min_value =0.00,max_value=1000.00)
 ac=st.number_input(
-        label = "工况3 ")
-
+        label = "工况4",step=1.00,
+        min_value =0.00,max_value=1000.00)
+ad=st.number_input(
+        label = "工况5",step=1.00,
+        min_value =0.00,max_value=1000.00)
 parameters = {
     '反应温度': {
         'a1': 0.15,
         'a2': 0.15,
         'a3': 0.15,
+        'a4': 0.15,
+        'a5': 0.15,
         'b1': aa,
         'b2': ab,
         'b3': ac,
+        'b4': ad,
+        'b5': ae,
         'c1': 1,
         'c2': 1,
         'c3': 1,
+        'c4': 1,
+        'c5': 1,
         'd1': aa,
         'd2': ab,
-        'd3': ac
+        'd3': ac,
+        'd4': ad,
+        'd5': ae
     },
     '氧气当量比': {
         'a1': aa,
         'a2': ab,
         'a3': ac,
+        'a4': ad,
+        'a5': ae,
         'b1': 800,
         'b2': 800,
         'b3': 800,
+        'b4': 800,
+        'b5': 800,
         'c1': 1,
         'c2': 1,
         'c3': 1,
+        'c4': 1,
+        'c5': 1,
         'd1': aa,
         'd2': ab,
-        'd3': ac
+        'd3': ac,
+        'd4': ad,
+        'd5': ae
     },
     '水蒸气与生物质质量比': {
         'a1': 0.15,
         'a2': 0.15,
         'a3': 0.15,
+        'a4': 0.15,
+        'a5': 0.15,
         'b1': 800,
         'b2': 800,
         'b3': 800,
+        'b4': 800,
+        'b5': 800,
         'c1': aa,
         'c2': ab,
         'c3': ac,
+        'c4': ad,
+        'c5': ae,
         'd1': aa,
         'd2': ab,
-        'd3': ac
+        'd3': ac,
+        'd4': ad,
+        'd5': ae
     }
 }
 
 if option1 in parameters:
     params = parameters[option1]
-    a1, a2, a3 = params['a1'], params['a2'], params['a3']
-    b1, b2, b3 = params['b1'], params['b2'], params['b3']
-    c1, c2, c3 = params['c1'], params['c2'], params['c3']
-    d1, d2, d3 = params['d1'], params['d2'], params['d3']
+    a1, a2, a3, a4, a5 = params['a1'], params['a2'], params['a3'], params['a4'], params['a5']
+    b1, b2, b3, b4, b5 = params['b1'], params['b2'], params['b3'], params['b4'], params['b5']
+    c1, c2, c3, c4, c5 = params['c1'], params['c2'], params['c3'], params['c4'], params['c5']
+    d1, d2, d3, d4, d5 = params['d1'], params['d2'], params['d3'], params['d4'], params['d5']
 else:
     print("无效选项")
 
 data_predict1=([4.453156,17.826622,76.977467,48.354889,5.789244,40.194178,a1,b1,c1],
       [4.453156,17.826622,76.977467,48.354889,5.789244,40.194178,a2,b2,c2],
-      [4.453156,17.826622,76.977467,48.354889,5.789244,40.194178,a3,b3,c3])
+      [4.453156,17.826622,76.977467,48.354889,5.789244,40.194178,a3,b3,c3],
+      [4.453156,17.826622,76.977467,48.354889,5.789244,40.194178,a4,b4,c4],
+      [4.453156,17.826622,76.977467,48.354889,5.789244,40.194178,a5,b5,c5])
 
 df_predict1=pd.DataFrame(data_predict1,columns= ['A', 'FC', 'V', 'C', 'H', 'O', 'ER', 'T', 'SB'])
 
 new_prediction1 = model.predict(df_predict1)
 dataprediction = {'Name':new_prediction1}
-index = [d1, d2, d3]
+index = [d1, d2, d3, d4, d5]
 df = pd.DataFrame(dataprediction, index=index)
 # 设置字体
 plt.rcParams['font.sans-serif'] = ['Times New Roman']
@@ -227,6 +256,6 @@ ax.grid(linestyle='dashed')
 #df_predict11=pd.DataFrame{([d1,d2,d3],new_prediction1),}
 #submitted1 = st.form_submit_button('提交: 进行规律预测')
 #if submitted1:
-st.write("用户输入的特征数据：{}".format([d1,d2,d3]))
+st.write("用户输入的特征数据：{}".format([d1,d2,d3,d4,d5]))
 #st.line_chart(dff)  
 st.pyplot(fig)
