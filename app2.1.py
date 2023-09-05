@@ -184,20 +184,23 @@ plt.rcParams['font.sans-serif'] = ['simhei.ttf']
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 绘制折线图
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b',label='产气含量')
+
 #y轴间距
 y_major_locator=MultipleLocator(10)
 ax.yaxis.set_major_locator(y_major_locator)
 
 # 添加数据标签
 for x, y in zip(df.index, df['Name']):
-    plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=12)
-    
+    plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=14)
+
+# 设置刻度线的可见性
+ax.xaxis.set_visible(True)
+ax.yaxis.set_visible(True) 
+
 # 添加标题和坐标轴标签
-plt.title('关键影响因素与产气氢气含量的关系图', fontproperties=font1, fontsize=16)
-plt.xlabel('影响因素', fontproperties=font1, fontsize=12)
-plt.ylabel('产气含量预测', fontproperties=font1, fontsize=12)
-
-
+plt.title('关键影响因素与产气氢气含量的关系图', fontproperties=font1, fontsize=18)
+plt.xlabel('影响因素', fontproperties=font1, fontsize=14)
+plt.ylabel('产气含量预测', fontproperties=font1, fontsize=14)
 
 # 设置坐标轴标签字体大小和粗细
 ax.tick_params(axis='x', labelsize=12)
@@ -210,7 +213,7 @@ plt.ylim(0, max(df['Name']) * 1.2)
 # 调整图形的边距
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
 # 添加图例
-ax.legend(frameon=False,loc='lower right',prop={'size':12})
+plt.legend(frameon=False,loc='lower right',prop={'size':12})
 
 # 设置网格线样式为虚线，并添加刻度
 ax.grid(linestyle='dashed')
