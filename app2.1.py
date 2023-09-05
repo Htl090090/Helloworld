@@ -8,6 +8,8 @@ import datetime
 import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
+from matplotlib.pyplot import MultipleLocator
+
 font1 = FontProperties(fname=r'simhei.ttf')
 
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
@@ -174,22 +176,29 @@ df = pd.DataFrame(dataprediction, index=index)
 
 # 设置Seaborn样式
 sns.set_theme(style="whitegrid", font='Times New Roman', font_scale=2.5)
+sns.set_context("poster")
+# 设置网格线样式为虚线，并添加刻度
+ax.grid(linestyle='dashed')
 # 设置字体
 plt.rcParams['font.sans-serif'] = ['simhei.ttf']
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 # 绘制折线图
-sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b', label='产气含量')
+sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b'，label='产气含量')
+#y轴间距
+y_major_locator=MultipleLocator(10)
+ax1.yaxis.set_major_locator(y_major_locator)
+
 # 添加数据标签
 for x, y in zip(df.index, df['Name']):
     plt.text(x, y, f'{y:.2f}', ha='center', va='bottom', fontsize=12)
+    
 # 添加标题和坐标轴标签
 plt.title('关键影响因素与产气氢气含量的关系图', fontproperties=font1, fontsize=16)
 plt.xlabel('影响因素', fontproperties=font1, fontsize=12)
 plt.ylabel('产气含量预测', fontproperties=font1, fontsize=12)
 
-# 设置网格线样式为虚线，并添加刻度
-ax.grid(linestyle='dashed')
+
 
 # 设置坐标轴标签字体大小和粗细
 ax.tick_params(axis='x', labelsize=12)
