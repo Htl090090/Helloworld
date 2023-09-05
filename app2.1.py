@@ -221,6 +221,11 @@ sns.set_context("poster")
 
 # 创建图形和坐标轴
 fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
+
+# 设置数字字体为新罗马
+ax.set_xticklabels(ax.get_xticks(), fontname='Times New Roman')
+ax.set_yticklabels(ax.get_yticks(), fontname='Times New Roman')
+
 # 绘制折线图
 sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
 
