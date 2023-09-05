@@ -203,7 +203,7 @@ dataprediction = {'Name':new_prediction1}
 index = [d1, d2, d3, d4, d5]
 df = pd.DataFrame(dataprediction, index=index)
 # 设置字体
-plt.rcParams['font.sans-serif'] = ['Times New Roman']
+#plt.rcParams['font.sans-serif'] = ['Times New Roman']
 
 # 设置Seaborn样式
 sns.set_theme(style="whitegrid",font='Times New Roman', font_scale=2.5)
