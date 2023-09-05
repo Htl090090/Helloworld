@@ -103,13 +103,13 @@ aa=st.number_input(
 ab=st.number_input(
         label = "工况2",step=1.00,
         min_value =0.00,max_value=1000.00)
-ab=st.number_input(
+ac=st.number_input(
         label = "工况3",step=1.00,
         min_value =0.00,max_value=1000.00)
-ac=st.number_input(
+ad=st.number_input(
         label = "工况4",step=1.00,
         min_value =0.00,max_value=1000.00)
-ad=st.number_input(
+ae=st.number_input(
         label = "工况5",step=1.00,
         min_value =0.00,max_value=1000.00)
 parameters = {
