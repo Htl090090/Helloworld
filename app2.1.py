@@ -11,6 +11,8 @@ from matplotlib.font_manager import FontProperties
 from matplotlib.pyplot import MultipleLocator
 import matplotlib.font_manager as fm
 
+font1 = FontProperties(fname=r'simhei.ttf')  
+
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
 st.set_page_config(page_title="生物质蒸汽气化气体产物预测",layout="wide",initial_sidebar_state="auto")
@@ -451,7 +453,7 @@ with st.form('data_input'):
   
   # 定义要使用的字体
   custom_font = fm.FontProperties(fname=r'Times New Roman.ttf')
-  font1 = FontProperties(fname=r'simhei.ttf')  
+ 
 
   # 设置Seaborn样式
   sns.set_theme(style="whitegrid", font=custom_font.get_name())
