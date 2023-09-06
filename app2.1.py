@@ -207,10 +207,11 @@ with st.form('data_input'):
   dataprediction = {'Name':new_prediction1}
   index = [d1, d2, d3, d4, d5]
   df = pd.DataFrame(dataprediction, index=index)
-
+  
   # 定义要使用的字体
   custom_font = fm.FontProperties(fname='Times New Roman.ttf')
-
+  st.write('<style>body { font-family: "Times New Roman", Times, serif; }</style>', unsafe_allow_html=True)
+     
   # 设置Seaborn样式
   sns.set_theme(style="whitegrid", font=custom_font.get_name())
   sns.set_context("poster")
@@ -242,7 +243,7 @@ with st.form('data_input'):
   plt.xlabel('影响因素', fontproperties=font1, fontsize=16)
   plt.ylabel('产气含量预测', fontproperties=font1, fontsize=16)
   # 添加图例
-  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop = {'size':12})
+  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop = {'family': font1 ,'size':12})
      
   # 设置坐标轴标签字体大小和粗细
   ax.tick_params(axis='x', labelsize=14)
