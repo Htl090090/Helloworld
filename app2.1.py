@@ -210,7 +210,6 @@ with st.form('data_input'):
   
   # 定义要使用的字体
   custom_font = fm.FontProperties(fname='Times New Roman.ttf')
-  st.write('<style>body { font-family: "Times New Roman", Times, serif; }</style>', unsafe_allow_html=True)
      
   # 设置Seaborn样式
   sns.set_theme(style="whitegrid", font=custom_font.get_name())
