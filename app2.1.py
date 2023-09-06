@@ -241,7 +241,7 @@ with st.form('data_input'):
   plt.xlabel('影响因素', fontproperties=font1, fontsize=16)
   plt.ylabel('产气含量预测', fontproperties=font1, fontsize=16)
   # 添加图例
-  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop = font1 )
+  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop = font1 ，fontsize = 12)
      
   # 设置坐标轴标签字体大小和粗细
   ax.tick_params(axis='x', labelsize=14)
