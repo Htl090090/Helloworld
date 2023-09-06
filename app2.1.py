@@ -11,8 +11,6 @@ from matplotlib.font_manager import FontProperties
 from matplotlib.pyplot import MultipleLocator
 import matplotlib.font_manager as fm
 
-font1 = FontProperties(fname=r'simhei.ttf')
-
 st.session_state.date_time=datetime.datetime.now() + datetime.timedelta(hours=8)
 
 st.set_page_config(page_title="生物质蒸汽气化气体产物预测",layout="wide",initial_sidebar_state="auto")
@@ -209,8 +207,9 @@ with st.form('data_input'):
   df = pd.DataFrame(dataprediction, index=index)
   
   # 定义要使用的字体
-  custom_font = fm.FontProperties(fname='Times New Roman.ttf')
-     
+  custom_font = FontProperties(fname=r'Times New Roman.ttf')
+  font1 = FontProperties(fname=r'simhei.ttf')  
+
   # 设置Seaborn样式
   sns.set_theme(style="whitegrid", font=custom_font.get_name())
   sns.set_context("poster")
@@ -242,7 +241,7 @@ with st.form('data_input'):
   plt.xlabel('影响因素', fontproperties=font1, fontsize=16)
   plt.ylabel('产气含量预测', fontproperties=font1, fontsize=16)
   # 添加图例
-  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop = {'family': font1 ,'size':12})
+  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop = {'family': font1.get_name() ,'size':12})
      
   # 设置坐标轴标签字体大小和粗细
   ax.tick_params(axis='x', labelsize=14)
