@@ -220,7 +220,7 @@ with st.form('data_input'):
   fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 
   # 绘制折线图
-  sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b', label='Name')
+  sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
 
   # 设置Y轴刻度范围
   plt.ylim(0, max(df['Name']) * 1.2)
@@ -252,7 +252,7 @@ with st.form('data_input'):
 
 
   # 添加图例
-  plt.legend(loc='lower right',prop={'size':10})
+  ax.legend(['产气氢气含量'], prop=font1, fontsize=10)
 
   # 设置网格线样式为虚线，并添加刻度
   ax.grid(linestyle='dashed')
