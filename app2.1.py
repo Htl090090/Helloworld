@@ -207,13 +207,12 @@ with st.form('data_input'):
   df = pd.DataFrame(dataprediction, index=index)
   
   # 定义要使用的字体
-  custom_font = fm.FontProperties(fname=r'Times New Roman.ttf')
+  custom_font = FontProperties(fname=r'Times New Roman.ttf')
   font1 = FontProperties(fname=r'simhei.ttf')  
 
   # 设置Seaborn样式
-  sns.set_theme(style="whitegrid", font=custom_font.get_name())
+  sns.set_theme(style="whitegrid", font=custom_font)
   sns.set_context("poster")
-  plt.rcParams['font.family'] = custom_font.get_name()
 
   # 创建图形和坐标轴
   fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
