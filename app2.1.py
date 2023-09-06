@@ -252,7 +252,7 @@ with st.form('data_input'):
 
 
   # 添加图例
-  #plt.legend(loc='lower right',prop={'size':10})
+  plt.legend(loc='lower right',prop={'size':10})
 
   # 设置网格线样式为虚线，并添加刻度
   ax.grid(linestyle='dashed')
