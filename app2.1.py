@@ -220,7 +220,7 @@ with st.form('data_input'):
   fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 
   # 绘制折线图
-  sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
+  sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=10, color='b')
 
   # 设置Y轴刻度范围
   plt.ylim(0, max(df['Name']) * 1.2)
@@ -241,18 +241,15 @@ with st.form('data_input'):
   plt.title('关键影响因素与产气中氢气含量的关系图', fontproperties=font1, fontsize=20)
   plt.xlabel('影响因素', fontproperties=font1, fontsize=16)
   plt.ylabel('产气含量预测', fontproperties=font1, fontsize=16)
-
+  # 添加图例
+  plt.legend(['氢气含量'],  loc='best', prop=font1, frameon=False, fontsize=12)
+     
   # 设置坐标轴标签字体大小和粗细
-  ax.tick_params(axis='x', labelsize=12)
-  ax.tick_params(axis='y', labelsize=12)
-
+  ax.tick_params(axis='x', labelsize=14)
+  ax.tick_params(axis='y', labelsize=14)
 
   # 调整图形的边距
   fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)
-
-
-  # 添加图例
-  plt.legend(['氢气含量'],  loc='best', prop=font1, frameon=False, fontsize=10)
 
   # 设置网格线样式为虚线，并添加刻度
   ax.grid(linestyle='dashed')
