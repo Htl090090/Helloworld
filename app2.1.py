@@ -252,7 +252,7 @@ with st.form('data_input'):
 
 
   # 添加图例
-  ax.legend(['氢气含量'], prop=font1, fontsize=8，frameon=False)
+  ax.legend(['氢气含量'], prop=font1, fontsize=8, frameon=False)
 
   # 设置网格线样式为虚线，并添加刻度
   ax.grid(linestyle='dashed')
