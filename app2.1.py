@@ -113,7 +113,10 @@ ad=st.number_input(
 ae=st.number_input(
         label = "工况5",step=1.00,
         min_value =0.00,max_value=1000.00)
-parameters = {
+# 提交按钮
+submitted = st.form_submit_button('确认提交')
+ if submitted:
+  parameters = {
     '反应温度': {
         'a1': 0.15,
         'a2': 0.15,
