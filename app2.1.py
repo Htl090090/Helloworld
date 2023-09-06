@@ -78,8 +78,8 @@ with st.form('user_input'):
         min_value = 0.00,max_value=5.00
     )
     # 提交按钮
-    submitted = st.form_submit_button('提交: 进行产气含量预测')
-    if submitted:
+    submitted1 = st.form_submit_button('提交: 进行产气含量预测')
+    if submitted1:
         st.write("用户输入的特征数据：{}".format([A, FC, V, C, H, O, ER, T, SB]))
 
 
