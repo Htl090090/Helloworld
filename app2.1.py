@@ -212,7 +212,7 @@ with st.form('data_input'):
   custom_font = fm.FontProperties(fname='Times New Roman.ttf')
 
   # 设置Seaborn样式
-  sns.set_theme(style="whitegrid", font=custom_font.get_name(),font_scale=2.5)
+  sns.set_theme(style="whitegrid", font=custom_font.get_name())
   sns.set_context("poster")
   plt.rcParams['font.family'] = custom_font.get_name()
 
