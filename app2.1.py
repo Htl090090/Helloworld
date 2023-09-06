@@ -220,7 +220,7 @@ with st.form('data_input'):
   fig, ax = plt.subplots(figsize=(10, 6), dpi=80)
 
   # 绘制折线图
-  sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b')
+  sns.lineplot(data=df, x=df.index, y='Name', marker='o', markersize=8, color='b', label='Name')
 
   # 设置Y轴刻度范围
   plt.ylim(0, max(df['Name']) * 1.2)
