@@ -207,7 +207,7 @@ with st.form('data_input'):
   df = pd.DataFrame(dataprediction, index=index)
   
   # 定义要使用的字体
-  custom_font = fm.FontProperties(fname=r''C:/Windows/Fonts/times.ttf')
+  custom_font = fm.FontProperties(fname=r'C:/Windows/Fonts/times.ttf')
   font1 = FontProperties(fname=r'simhei.ttf')  
 
   # 设置Seaborn样式
