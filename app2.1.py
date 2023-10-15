@@ -208,7 +208,7 @@ with st.form('data_input'):
   
   # 定义要使用的字体
   #custom_font = fm.FontProperties(fname=r'times.ttf')
-  font1 = FontProperties(fname=r'simhei.ttf')  
+  font1 = fm.FontProperties(fname=r'simhei.ttf')  
 
   # 设置Seaborn样式
   sns.set_theme(style="whitegrid", font=font1)
@@ -242,7 +242,7 @@ with st.form('data_input'):
   plt.ylabel('产气含量预测', fontproperties=font1, fontsize=18)
   # 添加图例
   #存在设置大小的问题 prop={'family' = font1.get_names,size: 12}
-  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop =font1)
+  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop={'family': font1.get_name(), 'size': 12})
   # 设置坐标轴标签字体大小和粗细
   ax.tick_params(axis='x', labelsize=14)
   ax.tick_params(axis='y', labelsize=14)
