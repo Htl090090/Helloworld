@@ -211,7 +211,7 @@ with st.form('data_input'):
   font1 = FontProperties(fname=r'simhei.ttf')  
 
   # 设置Seaborn样式
-  sns.set_theme(style="whitegrid", font=custom_font.get_name())
+  sns.set_theme(style="whitegrid", font=font1)
   sns.set_context("poster")
   plt.rcParams['font.family'] = custom_font.get_name()
 
@@ -238,11 +238,11 @@ with st.form('data_input'):
 
   # 添加标题和坐标轴标签
   plt.title('关键影响因素与产气中氢气含量的关系图', fontproperties=font1, fontsize=24)
-  plt.xlabel('影响因素', fontproperties=font1, fontsize=20)
-  plt.ylabel('产气含量预测', fontproperties=font1, fontsize=20)
+  plt.xlabel('影响因素', fontproperties=font1, fontsize=18)
+  plt.ylabel('产气含量预测', fontproperties=font1, fontsize=18)
   # 添加图例
-  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop =font1) #存在设置大小的问题 prop={'family' = font1.get_names,size: 12}
-     
+  #存在设置大小的问题 prop={'family' = font1.get_names,size: 12}
+  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop={'family': font1.get_name(), 'size': 12})  
   # 设置坐标轴标签字体大小和粗细
   ax.tick_params(axis='x', labelsize=14)
   ax.tick_params(axis='y', labelsize=14)
