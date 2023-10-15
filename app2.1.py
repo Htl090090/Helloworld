@@ -242,7 +242,7 @@ with st.form('data_input'):
   plt.ylabel('产气含量预测', fontproperties=font1, fontsize=18)
   # 添加图例
   #存在设置大小的问题 prop={'family' = font1.get_names,size: 12}
-  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop={'family': font1.get_name(), 'size': 10})
+  plt.legend(['氢气含量'],  loc='best',  frameon=False, prop={'family': font1.get_name()})
   # 设置坐标轴标签字体大小和粗细
   ax.tick_params(axis='x', labelsize=14)
   ax.tick_params(axis='y', labelsize=14)
