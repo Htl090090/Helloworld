@@ -211,7 +211,7 @@ with st.form('data_input'):
   font1 = fm.FontProperties(fname=r'simhei.ttf')  
 
   # 设置Seaborn样式
-  sns.set_theme(style="whitegrid", font=font1)
+  sns.set_theme(style="whitegrid", font=font1.get_name())
   sns.set_context("poster")
   plt.rcParams['font.family'] = font1.get_name()
 
