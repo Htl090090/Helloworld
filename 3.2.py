@@ -95,7 +95,7 @@ if gn == '产物预测'：
 
         # 根据模型的特征重要性输出，绘制特征：bill length, bill depth, flipper length 的直方图
         st.subheader("预测的{}组分含量是：{} %".format(gas, new_prediction))
-else：
+else:
  st.title("生物质蒸汽气化关键因素影响规律预测")
  st.header("")
  with st.form('data_input'):
