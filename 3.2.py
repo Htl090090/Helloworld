@@ -98,6 +98,8 @@ if gn == '产物预测':
         # 根据模型的特征重要性输出，绘制特征：bill length, bill depth, flipper length 的直方图
         st.subheader("预测的{}组分含量是：{} %".format(gas, new_prediction))
 else:
+ st.title("生物质蒸汽气化关键因素影响规律预测")
+ st.header("")
  gas = st.selectbox("请选择气体：", ('氢气', '甲烷', '一氧化碳', '二氧化碳'))
  if gas == '氢气':
         model = pickle.load(open("H21.dat", "rb"))
@@ -111,8 +113,7 @@ else:
         model = pickle.load(open("H2COFF.dat", "rb"))
  else:
         st.write("请选择正确的气体")
- st.title("生物质蒸汽气化关键因素影响规律预测")
- st.header("")
+ 
  with st.form('data_input'):
     option1 = st.radio(
         "您选择的关键因素是：👇",
