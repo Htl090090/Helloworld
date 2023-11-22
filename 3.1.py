@@ -36,7 +36,7 @@ if aim == '产物浓度':
     elif gas == '一氧化碳':
         model = pickle.load(open("COF.dat", "rb"))
     elif gas == '二氧化碳':
-        model = pickle.load(open("CO2F.dat", "rb"))
+        model = pickle.load(open("H2COFF.dat", "rb"))
     else:
         st.write("请选择正确的气体")
 else:
