@@ -258,7 +258,7 @@ else:
         ax.yaxis.set_visible(True)
 
         # 添加标题和坐标轴标签
-        plt.title('关键影响因素与产气中氢气含量的关系图', fontproperties=font1, fontsize=24)
+        plt.title('关键影响因素与产气中各组分含量的关系图', fontproperties=font1, fontsize=24)
         plt.xlabel('影响因素', fontproperties=font1, fontsize=18)
         plt.ylabel('产气含量预测', fontproperties=font1, fontsize=18)
         # 添加图例
