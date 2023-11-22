@@ -21,7 +21,7 @@ t = st.sidebar.time_input('Time', st.session_state.date_time.time())
 t = f'{t}'.split('.')[0]
 st.sidebar.write(f'The current date time is {d} {t}')
 
-if gn == '产物预测'：
+if gn == '产物预测':
  st.title("生物质蒸汽气化气体产物预测")
  st.header("")
  aim = st.radio(
