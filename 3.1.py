@@ -15,7 +15,7 @@ st.session_state.date_time = datetime.datetime.now() + datetime.timedelta(hours=
 
 st.set_page_config(page_title="生物质蒸汽气化气体产物预测", layout="wide", initial_sidebar_state="auto")
 st.sidebar.radio("请选择功能：👇",
-                 ('工况预测', '影响规律预测'))
+                 ('产物预测', '影响规律预测'))
 d = st.sidebar.date_input('Date', st.session_state.date_time.date())
 t = st.sidebar.time_input('Time', st.session_state.date_time.time())
 t = f'{t}'.split('.')[0]
